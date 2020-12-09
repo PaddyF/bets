@@ -8,9 +8,10 @@ import javax.persistence.Id
 @Entity
 class Bet(
     var odds: Double,
-    var content: String,
+    var custombet: String,
     var fighter: Fighter,
     var fight: Fight,
+    var betType: BetType,
     var won: Boolean,
     var cancelled: Boolean,
     var author: User,
@@ -56,3 +57,4 @@ class Fight(
 
 enum class Method {KO, SUB, DEC, DQ, NC}
 
+enum class BetType {WIN, DRAW, KO, KOTKO, SUB, DEC, ITD }

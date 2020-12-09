@@ -2,16 +2,20 @@ package com.paddy.bets.controller
 
 import com.paddy.bets.Bet
 import com.paddy.bets.repository.BetRepository
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.*
 
 @RestController
-class BetController(private val repo: BetRepository) {
+class BetController {
+
+    @Autowired
+    lateinit var repo: BetRepository
 
     @GetMapping("/bets")
-    fun getAllBets(): List<Bet> = repo.findAll()
+    fun getAllBets(): Iterable<Bet> = repo.findAll()
 
     @PostMapping("/bets")
     fun addBet(@Validated @RequestBody bet: Bet): Bet = repo.save(bet)
