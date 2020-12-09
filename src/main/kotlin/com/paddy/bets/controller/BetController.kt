@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*
 class BetController(private val repo: BetRepository) {
 
     @GetMapping("/bets")
-    fun getAllBets(): List<Bet> = repo.findAll()
+    fun getAllBets(): Iterable<Bet> = repo.findAll()
 
     @PostMapping("/bets")
     fun addBet(@Validated @RequestBody bet: Bet): Bet = repo.save(bet)
