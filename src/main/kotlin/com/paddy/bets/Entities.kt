@@ -57,4 +57,6 @@ class Fight(
 
 enum class Method {KO, SUB, DEC, DQ, NC}
 
-enum class BetType {WIN, DRAW, KO, KOTKO, SUB, DEC, ITD }
+enum class BetType {WIN, DRAW, KO, KOTKO, SUB, DEC, ITD, KOSUB, KODEC, SUBDEC, OVER, UNDER}
+
+enum class Rounds {ONE, ONEHALF, TWO, TWOHALF, THREE, THREEHALF, FOUR, FOURHALF, FIVE}
