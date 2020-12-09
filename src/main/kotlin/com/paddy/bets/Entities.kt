@@ -12,6 +12,7 @@ class Bet(
     var fighter: Fighter,
     var fight: Fight,
     var betType: BetType,
+    var betRound: Rounds,
     var won: Boolean,
     var cancelled: Boolean,
     var author: User,
@@ -48,14 +49,14 @@ class Fight(
     var date: Date,
     var winner : Fighter,
     var loser : Fighter,
-    var rounds: Int,
+    var rounds: Rounds,
     var method: Method,
     var cancelled: Boolean,
     @Id @GeneratedValue var id: Long? = null
 
 )
 
-enum class Method {KO, SUB, DEC, DQ, NC}
+enum class Method(method: String) { KO("KO"), SUB("SUB"), DEC("DEC"), DQ("DQ"), NC("NC")}
 
 enum class BetType {WIN, DRAW, KO, KOTKO, SUB, DEC, ITD, KOSUB, KODEC, SUBDEC, OVER, UNDER}
 
