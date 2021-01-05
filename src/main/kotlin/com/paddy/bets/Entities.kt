@@ -58,6 +58,6 @@ class Fight(
 
 enum class Method(method: String) { KO("KO"), SUB("SUB"), DEC("DEC"), DQ("DQ"), NC("NC")}
 
-enum class BetType {WIN, DRAW, KO, KOTKO, SUB, DEC, ITD, KOSUB, KODEC, SUBDEC, OVER, UNDER}
+enum class BetType(type: String) { WIN("WIN"), DRAW("DRAW"), KO("KO"), KOTKO("KO/TKO"), SUB("SUB"), DEC("DEC"), ITD("ITD"), KOSUB("KO/SUB"), KODEC("KO/DEC"), SUBDEC("SUB/DEC"), OVER("OVER"), UNDER("UNDER"), FGTD("GOES TO DEC"), FDGTD("DOES NOT GO TO DEC")}
 
-enum class Rounds {ONE, ONEHALF, TWO, TWOHALF, THREE, THREEHALF, FOUR, FOURHALF, FIVE}
+enum class Rounds(rounds: Double) { ONE(1.0), ONEHALF(1.5), TWO(2.0), TWOHALF(2.5), THREE(3.0), THREEHALF(3.5), FOUR(4.0), FOURHALF(4.5), FIVE(5.0)}
