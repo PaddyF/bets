@@ -11,7 +11,11 @@
     <p>odds: <input type="text" th:field="*{odds}" /></p>
     <p>author: <input type="text" th:field="*{author}" /></p>
     <p>image: <input type="text" th:field="*{image}" /></p>
-    <p>betType: <input type="text" th:field="*{betType}" /></p>
+    <label>BetTypes: </label>
+    <select th:field="*{betType}">
+        <option th:each="typeOpt : ${T(com.paddy.bets.BetType).values()}"
+                th:value="${typeOpt}" th:text="${typeOpt}"></option>
+    </select>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>
 </body>

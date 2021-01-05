@@ -8,23 +8,23 @@ import org.springframework.http.ResponseEntity
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.*
 
-@RestController
-class BetController {
+//@RestController
+//class BetController {
 
-    @Autowired
-    lateinit var repo: BetRepository
+ //   @Autowired
+ //   lateinit var repo: BetRepository
 
-    @GetMapping("/bets")
-    fun getAllBets(): Iterable<Bet> = repo.findAll()
+//    @GetMapping("/bets")
+ //   fun getAllBets(): Iterable<Bet> = repo.findAll()
 
-    @PostMapping("/bets")
-    fun addBet(@Validated @RequestBody bet: Bet): Bet = repo.save(bet)
+  //  @PostMapping("/bets")
+  //  fun addBet(@Validated @RequestBody bet: Bet): Bet = repo.save(bet)
 
-    @DeleteMapping("/bets/{id}")
-    fun deleteBetById(@PathVariable(value = "id") betId: Long): ResponseEntity<Void> {
-        return repo.findById(betId).map { bet ->
-            repo.delete(bet)
-            ResponseEntity<Void>(HttpStatus.OK)
-        }.orElse(ResponseEntity.notFound().build())
-    }
-}
+ //   @DeleteMapping("/bets/{id}")
+ //   fun deleteBetById(@PathVariable(value = "id") betId: Long): ResponseEntity<Void> {
+ //       return repo.findById(betId).map { bet ->
+  //          repo.delete(bet)
+  //          ResponseEntity<Void>(HttpStatus.OK)
+  //      }.orElse(ResponseEntity.notFound().build())
+   // }
+//}
